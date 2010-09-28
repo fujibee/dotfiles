@@ -1,0 +1,13 @@
+escape ^Tt
+
+vbell off
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+startup_message off
+autodetach on
+defscrollback 3000
+
+bind w windowlist -b
+
+bind 'U' eval "encoding utf8" "stuff 'export LANG=ja_JP.UTF-8\012'"
+bind 'E' eval "encoding euc" "stuff 'export LANG=ja_JP.EUC-JP\012'"
+bind 'J' eval "encoding sjis" "stuff 'export LANG=ja_JP.SJIS\012'"
