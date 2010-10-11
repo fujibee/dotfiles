@@ -8,6 +8,7 @@ alias p='pwd'
 alias j='jobs'
 
 export LANG=ja_JP.UTF-8
+export PATH=/opt/local/bin:$PATH
 
 case ${UID} in
 0)
@@ -36,4 +37,4 @@ setopt hist_ignore_dups
 setopt share_history
 
 # for rvm
-if [[ -s /Users/fujikawa/.rvm/scripts/rvm ]] ; then source /Users/fujikawa/.rvm/scripts/rvm ; fi
+if [[ -s /Users/fujibee/.rvm/scripts/rvm ]] ; then source /Users/fujibee/.rvm/scripts/rvm ; fi
