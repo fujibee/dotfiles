@@ -12,6 +12,7 @@ set tabstop=2
 set smartindent
 set number
 set noswapfile
+set hlsearch
 
 " 文字コードの自動認識
 if &encoding !=# 'utf-8'
