@@ -1,4 +1,5 @@
 autoload -U compinit
+autoload -Uz vcs_info
 compinit
 
 alias ls='ls -G'
@@ -10,6 +11,8 @@ alias r='rails'
 
 export LANG=ja_JP.UTF-8
 export PATH=/usr/local/mysql/bin:/opt/local/bin:$PATH
+export HADOOP_HOME=/usr/local/hadoop
+export SCREENDIR=$HOME/.screen
 
 #case ${UID} in
 #0)
@@ -29,9 +32,16 @@ export PATH=/usr/local/mysql/bin:/opt/local/bin:$PATH
 #esac
 #RPROMPT="%{[31m%}[%/]%{[m%}"
 
+zstyle ':vcs_info:*' formats '(%b)'
+zstyle ':vcs_info:*' actionformats '(%b|%a)'
 precmd () {
-  PROMPT="%F{green}%n@%~%% %f"
-  RPROMPT="%F{green}%F{red}[`$HOME/.rvm/bin/rvm-prompt`]%f"
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+  
+  PROMPT="%F{green}%n@%~ %f
+%% "
+  RPROMPT="%1(v|%F{yellow}%1v%f|)%F{red}[`$HOME/.rvm/bin/rvm-prompt`]%f"
 }
 
 # for history
