@@ -1,3 +1,4 @@
+call pathogen#infect()
 syntax on
 filetype on
 
@@ -13,6 +14,7 @@ set smartindent
 set number
 set noswapfile
 set hlsearch
+set paste
 
 " 文字コードの自動認識
 if &encoding !=# 'utf-8'

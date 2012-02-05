@@ -1,0 +1,15 @@
+[user]
+	name = Koichi Fujikawa
+	email = fujibee@hapyrus.com
+[alias]
+	co = checkout
+	st = status
+	ci = commit -av
+	di = diff
+	br = branch
+[color]
+	ui = true
+[github]
+	user = hapyrus
+#[core]
+#  pager = less -r

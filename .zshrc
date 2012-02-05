@@ -8,11 +8,13 @@ alias la='ls -laG'
 alias p='pwd'
 alias j='jobs'
 alias r='rails'
+alias g='git'
 
 export LANG=ja_JP.UTF-8
 export PATH=/usr/local/mysql/bin:/opt/local/bin:$PATH
 export HADOOP_HOME=/usr/local/hadoop
 export SCREENDIR=$HOME/.screen
+export LESS="-R"
 
 #case ${UID} in
 #0)
@@ -53,3 +55,6 @@ setopt share_history
 
 # for rvm
 if [[ -s /Users/fujibee/.rvm/scripts/rvm ]] ; then source /Users/fujibee/.rvm/scripts/rvm ; fi
+
+# for hapyrus
+source ~/.hapyrusrc
