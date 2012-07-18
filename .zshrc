@@ -15,6 +15,7 @@ export PATH=/usr/local/mysql/bin:/opt/local/bin:$PATH
 export HADOOP_HOME=/usr/local/hadoop
 export SCREENDIR=$HOME/.screen
 export LESS="-R"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 #case ${UID} in
 #0)

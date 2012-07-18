@@ -11,10 +11,11 @@ set cindent
 set shiftwidth=2
 set tabstop=2
 set smartindent
+set autoindent
 set number
 set noswapfile
 set hlsearch
-set paste
+"set paste "just pasting only
 
 " 文字コードの自動認識
 if &encoding !=# 'utf-8'
@@ -72,3 +73,5 @@ set fileformats=unix,dos,mac
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
+" for ruby
+let ruby_space_errors=1
