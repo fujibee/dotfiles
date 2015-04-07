@@ -1,61 +1,80 @@
-autoload -U compinit
-autoload -Uz vcs_info
-compinit
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/fujibee/.oh-my-zsh
 
-alias ls='ls -G'
-alias ll='ls -lG'
-alias la='ls -laG'
-alias p='pwd'
-alias j='jobs'
-alias r='rails'
-alias g='git'
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="gentoo"
 
-export LANG=ja_JP.UTF-8
-export PATH=/usr/local/mysql/bin:/opt/local/bin:$PATH
-export HADOOP_HOME=/usr/local/hadoop
-export SCREENDIR=$HOME/.screen
-export LESS="-R"
-export JAVA_HOME=$(/usr/libexec/java_home)
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-#case ${UID} in
-#0)
-#    PROMPT="%B%{[31m%}%/#%{[m%}%b "
-#    PROMPT2="%B%{[31m%}%_#%{[m%}%b "
-#    SPROMPT="%B%{[31m%}%r is correct? [n,y,a,e]:%{[m%}%b "
-#    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-#        PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
-#    ;;
-#*)
-#    PROMPT="%F{red}`$HOME/.rvm/bin/rvm-prompt` %n@%m$%f "
-#    PROMPT2="%{[32m%}%_%%%{[m%} "
-#    SPROMPT="%{[32m%}%r is correct? [n,y,a,e]:%{[m%} "
-#    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-#        PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
-#    ;;
-#esac
-#RPROMPT="%{[31m%}[%/]%{[m%}"
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-zstyle ':vcs_info:*' formats '(%b)'
-zstyle ':vcs_info:*' actionformats '(%b|%a)'
-precmd () {
-  psvar=()
-  LANG=en_US.UTF-8 vcs_info
-  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-  
-  PROMPT="%F{green}%n@%~ %f
-%% "
-  RPROMPT="%1(v|%F{yellow}%1v%f|)%F{red}[`$HOME/.rvm/bin/rvm-prompt`]%f"
-}
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-# for history
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt hist_ignore_dups
-setopt share_history
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# for rvm
-if [[ -s /Users/fujibee/.rvm/scripts/rvm ]] ; then source /Users/fujibee/.rvm/scripts/rvm ; fi
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# for hapyrus
-source ~/.hapyrusrc
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+# User configuration
+
+export PATH="/usr/local/mysql/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
