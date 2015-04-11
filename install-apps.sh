@@ -14,10 +14,12 @@ brew install wget
 brew install curl
 brew install vim
 brew install postgresql
+brew install mysql
  
 # for dev
 brew cask install virtualbox  
 brew cask install vagrant
+brew cask install vagrant-manager
 
 # for desktop
 brew cask install google-chrome
@@ -28,3 +30,4 @@ brew cask install google-japanese-ime
 brew cask install google-drive
 brew cask install skype
 brew cask install slack
+brew cask install viscosity
