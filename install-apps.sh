@@ -31,3 +31,4 @@ brew cask install google-drive
 brew cask install skype
 brew cask install slack
 brew cask install viscosity
+brew cask install adobe-reader

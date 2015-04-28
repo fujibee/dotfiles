@@ -45,12 +45,14 @@ ZSH_THEME="gentoo"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(ruby rails git vagrant)
 
 # User configuration
 
 export PATH="/usr/local/mysql/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+alias v='vagrant'
 
 source $ZSH/oh-my-zsh.sh
 
