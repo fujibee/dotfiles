@@ -12,6 +12,4 @@ bind 'U' eval "encoding utf8" "stuff 'export LANG=ja_JP.UTF-8\012'"
 bind 'E' eval "encoding euc" "stuff 'export LANG=ja_JP.EUC-JP\012'"
 bind 'J' eval "encoding sjis" "stuff 'export LANG=ja_JP.SJIS\012'"
 
-screen -t hapyrus 0
-screen -t autotest 1
-screen -t monitor 2
+screen -t work 0
