@@ -2,6 +2,9 @@
 
 git clone https://github.com/fujibee/dotfiles.git .dotfiles
 
+# install homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 cd .dotfiles
 sh ./install-apps.sh
 

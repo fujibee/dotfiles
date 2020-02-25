@@ -15,6 +15,8 @@ brew install curl
 brew install vim
 brew install postgresql
 brew install mysql
+brew install node
+brew install ruby
  
 # for dev
 brew cask install virtualbox  
@@ -32,3 +34,9 @@ brew cask install skype
 brew cask install slack
 brew cask install viscosity
 brew cask install adobe-reader
+brew cask install messenger
+brew cask install spectacle
+
+# for appstore
+# xcode
+# twitter

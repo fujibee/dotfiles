@@ -45,12 +45,22 @@ ZSH_THEME="gentoo"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ruby rails git vagrant)
+plugins=(ruby rails git docker docker-compose git-flow)
 
 # User configuration
 
 export PATH="/usr/local/mysql/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=/Users/fujibee/.local/bin:$PATH
+#export PATH="/Users/fujibee/anaconda3/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# rbenv
+eval "$(rbenv init -)"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 alias v='vagrant'
 
@@ -80,3 +90,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias bastion='ssh -i ~/.ssh/koichi-usw2-to-hq.pem ec2-user@52.36.139.132'
+alias myip='ipconfig getifaddr en0'
