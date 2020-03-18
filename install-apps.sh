@@ -35,7 +35,7 @@ brew cask install slack
 brew cask install stack
 brew cask install zoomus
 brew cask install viscosity
-brew cask install adobe-reader
+brew cask install adobe-acrobat-reader
 #brew cask install messenger
 #brew cask install spectacle
 
