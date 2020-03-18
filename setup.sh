@@ -1,14 +1,10 @@
 #!/bin/sh
 
-git clone https://github.com/fujibee/dotfiles.git .dotfiles
-
-# install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 cd .dotfiles
 sh ./install-apps.sh
 
-#sudo -c "echo /opt/local/bin/bash >> /etc/shells"
 chsh -s /usr/local/bin/zsh
 
 sh ./install-dotfiles.sh
+
+sh ./defaults-write.sh
