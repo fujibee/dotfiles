@@ -5,3 +5,8 @@ cd ..
 for x in $target; do
   ln -s .dotfiles/$x ./$x
 done
+
+# for .oh-my-zsh
+cd .dotfiles
+git submodule init
+git submodule update
