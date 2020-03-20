@@ -58,11 +58,9 @@ export PATH=/Users/fujibee/.local/bin:$PATH
 eval "$(rbenv init -)"
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-alias v='vagrant'
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 source $ZSH/oh-my-zsh.sh
 
