@@ -14,4 +14,15 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
+# menu bar
+defaults write com.apple.systemuiserver menuExtras -array \
+"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+"/System/Library/CoreServices/Menu Extras/Clock.menu" \
+"/System/Library/CoreServices/Menu Extras/Displays.menu" \
+"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+"/System/Library/CoreServices/Menu Extras/TextInput.menu" \
+"/System/Library/CoreServices/Menu Extras/Battery.menu"
+killall SystemUIServer
+
 #capslock-control swap

@@ -21,8 +21,11 @@ brew install vim
 #brew install mysql
 #brew install node
 #brew install ruby
+#brew install rbenv ruby-build
+
 brew cask install iterm2
 brew cask install docker
+brew install docker-compose
 
 # for desktop
 brew cask install google-chrome
