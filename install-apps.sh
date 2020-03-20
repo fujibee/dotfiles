@@ -35,7 +35,6 @@ brew cask install evernote
 brew cask install google-japanese-ime
 brew cask install google-drive-file-stream
 brew cask install slack
-brew cask install stack
 brew cask install zoomus
 brew cask install viscosity
 brew cask install adobe-acrobat-reader
@@ -45,3 +44,5 @@ brew cask install adobe-acrobat-reader
 # from appstore
 # xcode
 # twitter
+
+# stack - https://getstack.app/

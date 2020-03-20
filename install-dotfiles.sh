@@ -1,9 +1,9 @@
 #!/bin/bash
 
-target=`ls -a .[a-z]*` # TODO need to avoid directories like `.git`
+target=`ls rc.d/`
 cd ..
 for x in $target; do
-  ln -s .dotfiles/$x ./$x
+  ln -s .dotfiles/rc.d/$x ./.$x
 done
 
 # for .oh-my-zsh
