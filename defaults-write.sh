@@ -14,8 +14,9 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Mouse track speed
-defaults write -g com.apple.mouse.scaling -float 5.0
+# Magic Mouse
+defaults write -g com.apple.mouse.scaling -float 5.0 # track speed
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string TwoButton
 
 # menu bar
 defaults write com.apple.systemuiserver menuExtras -array \

@@ -10,16 +10,24 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-rails'
-Plug 'altercation/vim-colors-solarized'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'altercation/vim-colors-solarized'
+Plug 'iCyMind/NeoSolarized'
+"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+colorscheme desert
+
 " solarized
-set background=dark
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors=256
-colorscheme solarized
+"set background=dark
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
+"let g:solarized_termcolors=256
+"colorscheme solarized
+"set termguicolors
+"let g:neosolarized_bold = 0
+"colorscheme NeoSolarized
 
 set enc=utf-8
 "set fenc=utf-8
