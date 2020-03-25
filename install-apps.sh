@@ -25,8 +25,10 @@ brew install vim
 
 brew cask install iterm2
 brew cask install docker
+brew cask install ngrok
 brew install docker-compose
 brew install hub
+brew install git-flow
 
 # for desktop
 brew cask install google-chrome
@@ -42,6 +44,9 @@ brew cask install adobe-acrobat-reader
 brew cask install authy
 #brew cask install messenger
 #brew cask install spectacle
+
+brew tap homebrew/cask-fonts #You only need to do this once for cask-fonts
+brew cask install font-fantasque-sans-mono
 
 # from appstore
 # xcode
