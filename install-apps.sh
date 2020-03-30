@@ -29,6 +29,7 @@ brew cask install ngrok
 brew install docker-compose
 brew install hub
 brew install git-flow
+brew cask install react-native-debugger
 
 # for desktop
 brew cask install google-chrome
@@ -41,6 +42,7 @@ brew cask install slack
 brew cask install zoomus
 brew cask install viscosity
 brew cask install adobe-acrobat-reader
+brew cask install adobe-creative-cloud
 brew cask install authy
 #brew cask install messenger
 #brew cask install spectacle
