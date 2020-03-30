@@ -2,4 +2,4 @@
 
 sh ./install-apps.sh
 sh ./install-dotfiles.sh
-sh ./defaults-write.sh
+sh ./apply-settings.sh

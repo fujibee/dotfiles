@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# plist files
+cp -p plists/* ~/Library/Preferences/
+
 # dock
 defaults write com.apple.dock autohide -int 1
 defaults write com.apple.dock orientation -string right
@@ -30,4 +33,5 @@ defaults write com.apple.systemuiserver menuExtras -array \
 "/System/Library/CoreServices/Menu Extras/Battery.menu"
 killall SystemUIServer
 
-#capslock-control swap
+# Restart
+sudo shutdown -r now
