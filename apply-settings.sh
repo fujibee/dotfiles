@@ -34,6 +34,12 @@ defaults write com.apple.systemuiserver menuExtras -array \
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 killall SystemUIServer
 
+# Font
+# https://tamoc.com/mac-catalina-dirty-font/
+# https://qiita.com/usagimaru/items/46c27c42e862fb8aba7e
+# http://jyurin-hack.com/it/?p=5683
+defaults write .GlobalPreferences AppleLanguages -array-add ja-US
+
 # Restart
 sudo shutdown -r now
 
@@ -42,4 +48,3 @@ sudo shutdown -r now
 
 # Google Japanese Input AZIK
 # General > Keymap > Romaji table > Customize > Edit > import from file.. and load settings/google_japanese_ime_azik.txt
-
