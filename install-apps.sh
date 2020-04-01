@@ -30,6 +30,7 @@ brew install docker-compose
 brew install hub
 brew install git-flow
 brew cask install react-native-debugger
+brew cask install macdown
 
 # for desktop
 brew cask install google-chrome
