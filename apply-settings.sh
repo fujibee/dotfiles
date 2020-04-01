@@ -31,7 +31,15 @@ defaults write com.apple.systemuiserver menuExtras -array \
 "/System/Library/CoreServices/Menu Extras/Volume.menu" \
 "/System/Library/CoreServices/Menu Extras/TextInput.menu" \
 "/System/Library/CoreServices/Menu Extras/Battery.menu"
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 killall SystemUIServer
 
 # Restart
 sudo shutdown -r now
+
+# key modifires
+# changing modifier key by CLI is hard. Do it mannualy for now. See: https://apple.stackexchange.com/questions/13598/updating-modifier-key-mappings-through-defaults-command-tool
+
+# Google Japanese Input AZIK
+# General > Keymap > Romaji table > Customize > Edit > import from file.. and load settings/google_japanese_ime_azik.txt
+
