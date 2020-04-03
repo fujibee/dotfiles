@@ -21,7 +21,7 @@ brew install vim
 #brew install mysql
 #brew install node
 #brew install ruby
-#brew install rbenv ruby-build
+brew install rbenv ruby-build
 
 brew cask install iterm2
 brew cask install docker
@@ -51,11 +51,13 @@ brew cask install authy
 brew tap homebrew/cask-fonts #You only need to do this once for cask-fonts
 brew cask install font-fantasque-sans-mono
 
+# printer driver
+
 brew tap homebrew/cask-drivers
 brew cask install apple-hewlett-packard-printer-drivers
 
-# from appstore
-# xcode
-# twitter
+# from App Store
+# Xcode
+# Twitter
 
 # stack - https://getstack.app/
