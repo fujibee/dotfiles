@@ -22,6 +22,7 @@ brew install vim
 #brew install node
 #brew install ruby
 brew install rbenv ruby-build
+brew install yarn
 
 brew cask install iterm2
 brew cask install docker
