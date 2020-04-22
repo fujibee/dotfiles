@@ -43,6 +43,14 @@ defaults write .GlobalPreferences AppleLanguages -array-add ja-US
 # Restart
 sudo shutdown -r now
 
+# Hostname
+# https://osxdaily.com/2012/10/24/set-the-hostname-computer-name-and-bonjour-name-separately-in-os-x/
+# scutil --set HostName "mbp2019"
+
+# System info
+# http://teczd.com/2015/09/23/osx-get-system-info-from-command-line/
+# system_profiler SPHardwareDataType
+
 # key modifires
 # changing modifier key by CLI is hard. Do it mannualy for now. See: https://apple.stackexchange.com/questions/13598/updating-modifier-key-mappings-through-defaults-command-tool
 
