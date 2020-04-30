@@ -32,6 +32,7 @@ brew install hub
 brew install git-flow
 brew cask install react-native-debugger
 brew cask install macdown
+brew cask install notion
 
 # for desktop
 brew cask install google-chrome
