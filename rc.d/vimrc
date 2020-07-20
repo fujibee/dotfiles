@@ -17,7 +17,7 @@ Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
-Plug 'plasticboy/vim-markdown'
+"Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 " solarized
