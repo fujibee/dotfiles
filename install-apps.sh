@@ -49,6 +49,13 @@ brew cask install adobe-creative-cloud
 brew cask install authy
 #brew cask install messenger
 #brew cask install spectacle
+brew cask install android-file-transfer
+brew cask install discord
+brew cask install kindle
+
+# pass for Chrome
+brew tap amar1729/formulae
+brew install browserpass
 
 brew tap homebrew/cask-fonts #You only need to do this once for cask-fonts
 brew cask install font-fantasque-sans-mono
