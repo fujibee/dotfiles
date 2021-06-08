@@ -91,4 +91,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias myip='ipconfig getifaddr en0'
-. /Users/koichi/.nix-profile/etc/profile.d/nix.sh
+#. /Users/koichi/.nix-profile/etc/profile.d/nix.sh
