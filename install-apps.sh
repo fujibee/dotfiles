@@ -47,7 +47,7 @@ brew install --cask zoomus
 #brew install --cask viscosity
 brew install --cask adobe-creative-cloud
 brew install --cask authy
-#brew install --cask messenger
+brew install --cask messenger
 #brew install --cask spectacle
 brew install --cask android-file-transfer
 brew install --cask discord
