@@ -56,3 +56,6 @@ sudo shutdown -r now
 
 # Google Japanese Input AZIK
 # General > Keymap > Romaji table > Customize > Edit > import from file.. and load settings/google_japanese_ime_azik.txt
+
+# pass
+# Just clone your pass-store repo to ~/.password-store and bring your key to ~/.gnupg
