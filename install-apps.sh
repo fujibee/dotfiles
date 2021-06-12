@@ -43,7 +43,7 @@ brew install --cask dropbox
 brew install --cask evernote
 #brew install --cask microsoft-office
 brew install --cask google-japanese-ime
-brew install --cask google-drive-file-stream
+brew install --cask google-drive
 brew install --cask slack
 brew install --cask zoomus
 #brew install --cask viscosity
