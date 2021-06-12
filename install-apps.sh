@@ -27,11 +27,13 @@ brew install pass
 
 brew install --cask iterm2
 brew install --cask docker
+brew install --cask zerotier-one
 #brew install --cask ngrok
 brew install docker-compose
 brew install hub
 brew install git-flow
 brew install --cask react-native-debugger
+brew install --cask android-file-transfer
 brew install --cask macdown
 brew install --cask notion
 
@@ -49,7 +51,6 @@ brew install --cask adobe-creative-cloud
 brew install --cask authy
 brew install --cask messenger
 #brew install --cask spectacle
-brew install --cask android-file-transfer
 brew install --cask discord
 brew install --cask kindle
 brew install --cask abyssoft-teleport
