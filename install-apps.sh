@@ -52,6 +52,7 @@ brew install --cask messenger
 brew install --cask android-file-transfer
 brew install --cask discord
 brew install --cask kindle
+brew install --cask abyssoft-teleport
 
 # pass for Chrome
 brew tap amar1729/formulae
