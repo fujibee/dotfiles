@@ -55,6 +55,7 @@ brew install --cask discord
 brew install --cask kindle
 brew install --cask abyssoft-teleport
 brew install --cask stack-stack
+brew install --cask deepl
 
 # pass for Chrome
 brew tap amar1729/formulae

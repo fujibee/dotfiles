@@ -22,6 +22,9 @@ defaults write -g com.apple.mouse.scaling -float 5.0 # track speed
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string TwoButton
 defaults write com.apple.AppleMultitouchMouse MouseButtonMode -string TwoButton
 
+# Finder
+defaults write com.apple.finder AppleShowAllFiles -boolean true
+
 # menu bar
 defaults write com.apple.systemuiserver menuExtras -array \
 "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
