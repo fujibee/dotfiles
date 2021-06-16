@@ -17,7 +17,7 @@ brew install git
 brew install wget
 brew install curl
 brew install vim
-#brew install postgresql
+brew install postgresql
 #brew install mysql
 #brew install node
 #brew install ruby
