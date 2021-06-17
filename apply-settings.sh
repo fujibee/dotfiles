@@ -50,6 +50,10 @@ sudo shutdown -r now
 # https://osxdaily.com/2012/10/24/set-the-hostname-computer-name-and-bonjour-name-separately-in-os-x/
 # scutil --set HostName "mbp2019"
 
+# DNS
+# sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
+# scutil --dns
+
 # System info
 # http://teczd.com/2015/09/23/osx-get-system-info-from-command-line/
 # system_profiler SPHardwareDataType
