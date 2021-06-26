@@ -58,6 +58,7 @@ brew install --cask microsoft-remote-desktop
 #brew install --cask microsoft-office
 #brew install --cask viscosity
 #brew install --cask spectacle
+#brew install --cask tunnelbear
 
 # pass for Chrome
 brew tap amar1729/formulae
