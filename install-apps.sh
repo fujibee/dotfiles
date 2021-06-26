@@ -17,13 +17,13 @@ brew install git
 brew install wget
 brew install curl
 brew install vim
+brew install postgresql
 brew install rbenv ruby-build
 brew install yarn
 brew install pass
 brew install docker-compose
 brew install hub
 brew install git-flow
-#brew install postgresql
 #brew install mysql
 #brew install node
 #brew install ruby
