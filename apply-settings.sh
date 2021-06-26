@@ -66,3 +66,6 @@ sudo shutdown -r now
 
 # pass
 # Just clone your pass-store repo to ~/.password-store and bring your key to ~/.gnupg
+
+# sshd
+# System Preferences -> Sharing, enable Remote Login.
