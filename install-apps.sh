@@ -37,6 +37,9 @@ brew install --cask macdown
 brew install --cask notion
 #brew install --cask ngrok
 
+brew tap ethereum/ethereum
+brew install ethereum
+
 # for desktop
 brew install --cask google-chrome
 brew install --cask dropbox
