@@ -39,6 +39,7 @@ brew install --cask notion
 
 brew tap ethereum/ethereum
 brew install ethereum
+brew install solidity
 
 # for desktop
 brew install --cask google-chrome
