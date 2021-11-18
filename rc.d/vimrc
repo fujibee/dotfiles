@@ -22,7 +22,6 @@ Plug 'tomlion/vim-solidity'
 call plug#end()
 
 " solarized
-"set background=dark
 "let g:solarized_visibility = "high"
 "let g:solarized_contrast = "high"
 "let g:solarized_termcolors=256
@@ -31,6 +30,7 @@ call plug#end()
 "let g:neosolarized_bold = 0
 "colorscheme NeoSolarized
 "colorscheme desert
+set background=dark
 let g:gruvbox_contrast_dark = "soft"
 colorscheme gruvbox
 
