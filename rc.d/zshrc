@@ -56,7 +56,7 @@ export PATH=/Users/fujibee/.local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # rbenv
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # pyenv
 #export PYENV_ROOT="$HOME/.pyenv"
