@@ -23,8 +23,9 @@ brew install yarn
 brew install pass
 brew install docker-compose
 brew install hub
-brew install git-flow
-brew install awscli
+brew install tmux
+#brew install git-flow
+#brew install awscli
 #brew install mysql
 #brew install node
 #brew install ruby

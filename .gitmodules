@@ -1,3 +1,6 @@
 [submodule "rc.d/oh-my-zsh"]
 	path = rc.d/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "rc.d/tmux/plugins/tpm"]
+	path = rc.d/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
