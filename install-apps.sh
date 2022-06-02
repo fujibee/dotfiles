@@ -35,6 +35,8 @@ brew install tmux
 
 brew install --cask iterm2
 brew install --cask zerotier-one
+brew install --cask unity-hub
+brew install --cask visual-studio
 
 #brew install --cask docker
 #brew install --cask react-native-debugger
@@ -58,17 +60,18 @@ brew install --cask notion
 brew install --cask adobe-creative-cloud
 brew install --cask authy
 brew install --cask messenger
+brew install --cask telegram-desktop
 brew install --cask discord
 brew install --cask kindle
 brew install --cask stack-stack
 brew install --cask deepl
 brew install --cask microsoft-remote-desktop
+brew install --cask tunnelbear
 
 #brew install --cask sidequest
 #brew install --cask microsoft-office
 #brew install --cask viscosity
 #brew install --cask spectacle
-#brew install --cask tunnelbear
 #brew install --cask abyssoft-teleport
 
 # pass for Chrome
@@ -86,5 +89,4 @@ brew install --cask apple-hewlett-packard-printer-drivers
 # from App Store
 # Xcode
 # Twitter
-
-# stack - https://getstack.app/
+# upnote
