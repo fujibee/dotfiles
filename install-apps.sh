@@ -67,6 +67,7 @@ brew install --cask stack-stack
 brew install --cask deepl
 brew install --cask microsoft-remote-desktop
 brew install --cask tunnelbear
+brew install --cask vlc
 
 #brew install --cask sidequest
 #brew install --cask microsoft-office
