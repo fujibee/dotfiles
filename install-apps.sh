@@ -10,6 +10,7 @@ brew upgrade
 #brew tap homebrew/binary
 brew tap homebrew/core
 brew tap homebrew/cask
+brew tap homebrew/cask-versions
  
 #brew install brew-cask
  
@@ -30,7 +31,7 @@ brew install tmux
 #brew install git-flow
 #brew install awscli
 #brew install mysql
-#brew install node
+#brew install nvm
 #brew install ruby
 
 brew install --cask iterm2
