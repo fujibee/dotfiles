@@ -33,6 +33,7 @@ brew install tmux
 #brew install mysql
 #brew install nvm
 #brew install ruby
+#brew install planetscale/tap/pscale
 
 brew install --cask iterm2
 brew install --cask zerotier-one

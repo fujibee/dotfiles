@@ -19,6 +19,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 "Plug 'plasticboy/vim-markdown'
 Plug 'tomlion/vim-solidity'
+Plug 'pantharshit00/vim-prisma'
 call plug#end()
 
 " solarized
