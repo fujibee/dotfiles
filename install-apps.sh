@@ -22,6 +22,7 @@ brew install curl
 brew install vim
 brew install pass
 brew install tmux
+brew install gh
 
 #brew install postgresql
 #brew install rbenv ruby-build
