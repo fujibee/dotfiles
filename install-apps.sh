@@ -40,6 +40,7 @@ brew install --cask iterm2
 brew install --cask zerotier-one
 brew install --cask unity-hub
 brew install --cask visual-studio
+brew install --cask figma
 
 #brew install --cask docker
 #brew install --cask react-native-debugger
