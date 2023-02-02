@@ -64,6 +64,9 @@ sudo shutdown -r now
 # Google Japanese Input AZIK
 # General > Keymap > Romaji table > Customize > Edit > import from file.. and load settings/google_japanese_ime_azik.txt
 
+# iTerm2 profile
+# Preference > Other Actions... > Import JSON profile
+
 # pass
 # Just clone your pass-store repo to ~/.password-store and bring your key to ~/.gnupg
 #$ PREFIX='/usr/local/opt/browserpass' make hosts-BROWSER-user -f '/usr/local/opt/browserpass/lib/browserpass/Makefile'
