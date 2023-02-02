@@ -66,6 +66,8 @@ sudo shutdown -r now
 
 # pass
 # Just clone your pass-store repo to ~/.password-store and bring your key to ~/.gnupg
+#$ PREFIX='/usr/local/opt/browserpass' make hosts-BROWSER-user -f '/usr/local/opt/browserpass/lib/browserpass/Makefile'
+#* Where BROWSER is one of the following: [chromium chrome vivaldi brave firefox]
 
 # sshd
 # System Preferences -> Sharing, enable Remote Login.
