@@ -24,13 +24,16 @@ brew install pass
 brew install tmux
 brew install gh
 
+brew tap aws/tap
+brew install awscli
+brew install aws-sam-cli
+
 #brew install postgresql
 #brew install rbenv ruby-build
 #brew install yarn
 #brew install docker-compose
 #brew install hub
 #brew install git-flow
-#brew install awscli
 #brew install mysql
 #brew install nvm
 #brew install ruby
