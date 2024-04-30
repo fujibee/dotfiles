@@ -23,10 +23,16 @@ brew install vim
 brew install pass
 brew install tmux
 brew install gh
+brew install xcodesorg/made/xcodes
 
-brew tap aws/tap
-brew install awscli
-brew install aws-sam-cli
+brew install --cask iterm2
+brew install --cask zerotier-one
+brew install --cask figma
+brew install --cask docker
+
+#brew tap aws/tap
+#brew install awscli
+#brew install aws-sam-cli
 
 #brew install postgresql
 #brew install rbenv ruby-build
@@ -39,13 +45,8 @@ brew install aws-sam-cli
 #brew install ruby
 #brew install planetscale/tap/pscale
 
-brew install --cask iterm2
-brew install --cask zerotier-one
-brew install --cask unity-hub
-brew install --cask visual-studio
-brew install --cask figma
-
-#brew install --cask docker
+#brew install --cask unity-hub
+#brew install --cask visual-studio
 #brew install --cask react-native-debugger
 #brew install --cask android-file-transfer
 #brew install --cask macdown
@@ -60,24 +61,26 @@ brew install --cask google-chrome
 brew install --cask dropbox
 brew install --cask evernote
 brew install --cask google-japanese-ime
-brew install --cask google-drive
 brew install --cask slack
 brew install --cask zoom
 brew install --cask notion
-brew install --cask adobe-creative-cloud
 brew install --cask authy
 brew install --cask messenger
-brew install --cask telegram-desktop
+brew install --cask telegram
 brew install --cask discord
 brew install --cask kindle
-brew install --cask stack-stack
 brew install --cask deepl
-brew install --cask microsoft-remote-desktop
 brew install --cask tunnelbear
-brew install --cask vlc
+brew install --cask asana
+brew install --cask adobe-creative-cloud
+brew install --cask microsoft-office
+brew install --cask microsoft-remote-desktop
+brew install --cask visual-studio-code
 
+#brew install --cask google-drive
+#brew install --cask stack-stack
+#brew install --cask vlc
 #brew install --cask sidequest
-#brew install --cask microsoft-office
 #brew install --cask viscosity
 #brew install --cask spectacle
 #brew install --cask abyssoft-teleport
@@ -95,6 +98,5 @@ brew tap homebrew/cask-drivers
 brew install --cask apple-hewlett-packard-printer-drivers
 
 # from App Store
-# Xcode
 # Twitter
 # upnote
