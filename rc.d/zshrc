@@ -49,9 +49,13 @@ ZSH_THEME="gentoo"
 plugins=(ruby rails git docker docker-compose git-flow pass tmux)
 
 # User configuration
-
 export PATH="/usr/local/mysql/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+#export PATH=/Users/fujibee/.local/bin:/opt/homebrew/bin/:$PATH
 export PATH=/Users/fujibee/.local/bin:$PATH
+
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 #export PATH="/Users/fujibee/anaconda3/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 

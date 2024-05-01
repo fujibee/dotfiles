@@ -2,14 +2,16 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 brew update
 brew upgrade
  
 #brew tap homebrew/versions
 #brew tap phinze/homebrew-cask
 #brew tap homebrew/binary
-brew tap homebrew/core
-brew tap homebrew/cask
+#brew tap homebrew/core
+#brew tap homebrew/cask
 brew tap homebrew/cask-versions
  
 #brew install brew-cask
@@ -94,8 +96,8 @@ brew install --cask font-fantasque-sans-mono
 
 # printer driver
 
-brew tap homebrew/cask-drivers
-brew install --cask apple-hewlett-packard-printer-drivers
+#brew tap homebrew/cask-drivers
+#brew install --cask apple-hewlett-packard-printer-drivers
 
 # from App Store
 # Twitter
