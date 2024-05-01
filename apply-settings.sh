@@ -62,6 +62,7 @@ sudo shutdown -r now
 # changing modifier key by CLI is hard. Do it mannualy for now. See: https://apple.stackexchange.com/questions/13598/updating-modifier-key-mappings-through-defaults-command-tool
 
 # Google Japanese Input AZIK
+# `sudo softwareupdate --install-rosetta` then install # it requires after 2024
 # General > Keymap > Romaji table > Customize > Edit > import from file.. and load settings/google_japanese_ime_azik.txt
 
 # iTerm2 profile
@@ -74,3 +75,6 @@ sudo shutdown -r now
 
 # sshd
 # System Preferences -> Sharing, enable Remote Login.
+
+# To show hidden files
+# cmd+shift+.
