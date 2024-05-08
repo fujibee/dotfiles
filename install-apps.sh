@@ -62,7 +62,6 @@ brew install --cask docker
 brew install --cask google-chrome
 brew install --cask dropbox
 brew install --cask evernote
-brew install --cask google-japanese-ime
 brew install --cask slack
 brew install --cask zoom
 brew install --cask notion
@@ -78,6 +77,7 @@ brew install --cask adobe-creative-cloud
 brew install --cask microsoft-office
 brew install --cask microsoft-remote-desktop
 brew install --cask visual-studio-code
+sudo softwareupdate --install-rosetta && brew install --cask google-japanese-ime
 
 #brew install --cask google-drive
 #brew install --cask stack-stack
