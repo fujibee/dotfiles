@@ -95,16 +95,35 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias myip='ipconfig getifaddr en0'
-#. /Users/koichi/.nix-profile/etc/profile.d/nix.sh
+#. $HOME/.nix-profile/etc/profile.d/nix.sh
 
 # Created by `pipx` on 2022-08-22 20:30:22
-export PATH="$PATH:/Users/koichi/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh"  ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$(brew --prefix nvm)/nvm.sh"  ] && \. "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # store credentials in this file
 source $HOME/.env.local
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
+
+# Added by Windsurf
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+
+# Task Master aliases added on 7/20/2025
+alias tm='task-master'
+alias taskmaster='task-master'
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+eval "$(rbenv init - zsh)"

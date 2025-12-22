@@ -57,6 +57,7 @@ brew install --cask docker
 #brew tap ethereum/ethereum
 #brew install ethereum
 #brew install solidity
+#brew install solana
 
 # for desktop
 brew install --cask google-chrome
