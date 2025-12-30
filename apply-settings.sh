@@ -78,3 +78,6 @@ sudo shutdown -r now
 
 # To show hidden files
 # cmd+shift+.
+
+# Shortcuts (Quick Actions)
+# Shortcuts.app > File > Import... > select .shortcut file
