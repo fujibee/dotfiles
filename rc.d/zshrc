@@ -95,10 +95,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias myip='ipconfig getifaddr en0'
-#. /Users/koichi/.nix-profile/etc/profile.d/nix.sh
+#. $HOME/.nix-profile/etc/profile.d/nix.sh
 
 # Created by `pipx` on 2022-08-22 20:30:22
-export PATH="$PATH:/Users/koichi/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
