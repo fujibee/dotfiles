@@ -26,6 +26,8 @@ brew install pass
 brew install tmux
 brew install gh
 brew install xcodesorg/made/xcodes
+brew install nvm
+brew install yarn
 
 brew install --cask iterm2
 brew install --cask zerotier-one
@@ -38,12 +40,10 @@ brew install --cask docker
 
 #brew install postgresql
 #brew install rbenv ruby-build
-#brew install yarn
 #brew install docker-compose
 #brew install hub
 #brew install git-flow
 #brew install mysql
-#brew install nvm
 #brew install ruby
 #brew install planetscale/tap/pscale
 
@@ -57,6 +57,7 @@ brew install --cask docker
 #brew tap ethereum/ethereum
 #brew install ethereum
 #brew install solidity
+#brew install solana
 
 # for desktop
 brew install --cask google-chrome

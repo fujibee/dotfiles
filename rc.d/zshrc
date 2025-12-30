@@ -102,5 +102,28 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$(brew --prefix nvm)/nvm.sh"  ] && \. "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# store credentials in this file
+source $HOME/.env.local
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
+
+# Added by Windsurf
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+
+# Task Master aliases added on 7/20/2025
+alias tm='task-master'
+alias taskmaster='task-master'
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+eval "$(rbenv init - zsh)"
