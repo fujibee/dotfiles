@@ -1,13 +1,26 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# usage: ai <claude|codex|gemini> [args...]
+# usage: ai <claude|codex|gemini> [continue|resume] [args...]
 ENGINE="${1:-}"
 shift || true
 
 if [[ -z "${ENGINE}" ]]; then
-  echo "Usage: ai <claude|codex|gemini> [args...]"
+  echo "Usage: ai <claude|codex|gemini> [continue|resume] [args...]"
   exit 2
+fi
+
+# Check for continue/resume subcommand
+SUBCMD=""
+TARGET=""
+if [[ "${1:-}" == "continue" ]] || [[ "${1:-}" == "resume" ]]; then
+  SUBCMD="$1"
+  shift || true
+  # For resume, capture optional target argument
+  if [[ "$SUBCMD" == "resume" ]] && [[ -n "${1:-}" ]] && [[ ! "$1" =~ ^- ]]; then
+    TARGET="$1"
+    shift || true
+  fi
 fi
 
 # Find repo root (prefer git), else current dir
@@ -37,27 +50,62 @@ EOF
 
 case "$ENGINE" in
   claude)
+    cd "$REPO_ROOT"
     # Claude Code supports system prompt append directly
-    exec claude --append-system-prompt "$AGENT_TEXT" "$@"
+    if [[ "$SUBCMD" == "continue" ]]; then
+      exec claude --continue --append-system-prompt "$AGENT_TEXT"
+    elif [[ "$SUBCMD" == "resume" ]]; then
+      if [[ -n "$TARGET" ]]; then
+        exec claude --resume "$TARGET" --append-system-prompt "$AGENT_TEXT"
+      else
+        exec claude --resume --append-system-prompt "$AGENT_TEXT"
+      fi
+    else
+      exec claude --append-system-prompt "$AGENT_TEXT" "$@"
+    fi
     ;;
 
   codex)
-    # Codex CLI: no system flag shown -> inject as the initial user prompt
-    # If user provided prompt args, keep them appended after the injection.
-    if [[ $# -gt 0 ]]; then
-      exec codex "$INJECT_PROMPT"$'\n\n'"User request:"$'\n'"$*" 
+    cd "$REPO_ROOT"
+    if [[ "$SUBCMD" == "continue" ]]; then
+      exec codex resume --last
+    elif [[ "$SUBCMD" == "resume" ]]; then
+      # target無しは --last、latest も --last に寄せる
+      if [[ -z "$TARGET" ]] || [[ "$TARGET" == "latest" ]]; then
+        exec codex resume --last
+      else
+        exec codex resume "$TARGET"
+      fi
     else
-      exec codex "$INJECT_PROMPT"
+      # Codex CLI: no system flag shown -> inject as the initial user prompt
+      # If user provided prompt args, keep them appended after the injection.
+      if [[ $# -gt 0 ]]; then
+        exec codex "$INJECT_PROMPT"$'\n\n'"User request:"$'\n'"$*"
+      else
+        exec codex "$INJECT_PROMPT"
+      fi
     fi
     ;;
 
   gemini)
-    # Gemini CLI: use interactive with an initial prompt injection.
-    # If args exist, treat them as an initial query.
-    if [[ $# -gt 0 ]]; then
-      exec gemini -i "$INJECT_PROMPT"$'\n\n'"User request:"$'\n'"$*"
+    cd "$REPO_ROOT"
+    if [[ "$SUBCMD" == "continue" ]]; then
+      exec gemini -r latest
+    elif [[ "$SUBCMD" == "resume" ]]; then
+      # target無しは latest
+      if [[ -z "$TARGET" ]]; then
+        exec gemini -r latest
+      else
+        exec gemini -r "$TARGET"
+      fi
     else
-      exec gemini -i "$INJECT_PROMPT"
+      # Gemini CLI: use interactive with an initial prompt injection.
+      # If args exist, treat them as an initial query.
+      if [[ $# -gt 0 ]]; then
+        exec gemini -i "$INJECT_PROMPT"$'\n\n'"User request:"$'\n'"$*"
+      else
+        exec gemini -i "$INJECT_PROMPT"
+      fi
     fi
     ;;
 
