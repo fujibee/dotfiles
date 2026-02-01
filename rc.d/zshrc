@@ -50,14 +50,9 @@ plugins=(ruby rails git docker docker-compose git-flow pass tmux)
 
 # User configuration
 export PATH="/usr/local/mysql/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-#export PATH=/Users/fujibee/.local/bin:/opt/homebrew/bin/:$PATH
-export PATH=/Users/fujibee/.local/bin:$PATH
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-#export PATH="/Users/fujibee/anaconda3/bin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # rbenv
 #eval "$(rbenv init -)"
@@ -97,13 +92,14 @@ source $ZSH/oh-my-zsh.sh
 alias myip='ipconfig getifaddr en0'
 #. $HOME/.nix-profile/etc/profile.d/nix.sh
 
-# Created by `pipx` on 2022-08-22 20:30:22
-export PATH="$PATH:$HOME/.local/bin"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix nvm)/nvm.sh"  ] && \. "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
 [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Created by `pipx` on 2022-08-22 20:30:22
+export PATH="$HOME/.local/bin":$PATH
 
 # store credentials in this file
 source $HOME/.env.local
@@ -127,3 +123,14 @@ case ":$PATH:" in
 esac
 # pnpm end
 eval "$(rbenv init - zsh)"
+
+alias login-liq="docker exec -it -u hostuser -w /repos liqag_agent zsh"
+alias login-thm="docker exec -it -u ubuntu -w /home/ubuntu thm_desktop zsh"
+alias login-aa="docker exec -it -u hostuser -w /repos airdrop_agent zsh"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
+# End of LM Studio CLI section
+
+alias ai="$HOME/.dotfiles/tools/ai-cli.sh"
+
