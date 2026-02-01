@@ -1,7 +1,12 @@
 #!/bin/sh
 
 # plist files
-cp -p plists/* ~/Library/Preferences/
+cp -p plists/com.apple.* ~/Library/Preferences/
+
+# LaunchAgents
+mkdir -p ~/Library/LaunchAgents
+cp -p plists/local.autossh-mbp.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/local.autossh-mbp.plist
 
 # dock
 defaults write com.apple.dock autohide -int 1

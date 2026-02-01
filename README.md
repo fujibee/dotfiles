@@ -4,6 +4,12 @@
 - `cd .dotfiles`
 - `./setup.sh`
 
+# autossh (iMac only)
+Keeps SSH master connection to MBP via launchd. Auto-reconnects after sleep/wake.
+- Requires mbp2024 host in `~/.ssh/config`
+- `apply-settings.sh` registers it to LaunchAgents
+- Verify: `launchctl list | grep autossh` / `ls ~/.ssh/cm-*`
+
 # backup items
 - Desktop/Documents/Download
 - .ssh

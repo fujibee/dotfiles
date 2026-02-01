@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>local.autossh-mbp</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/autossh</string>
+        <string>-M</string>
+        <string>0</string>
+        <string>-N</string>
+        <string>-o</string>
+        <string>ServerAliveInterval=30</string>
+        <string>-o</string>
+        <string>ServerAliveCountMax=3</string>
+        <string>-o</string>
+        <string>ExitOnForwardFailure=yes</string>
+        <string>-o</string>
+        <string>ControlMaster=yes</string>
+        <string>-o</string>
+        <string>ControlPersist=no</string>
+        <string>mbp2024</string>
+    </array>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/autossh-mbp.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/autossh-mbp.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>AUTOSSH_GATETIME</key>
+        <string>0</string>
+    </dict>
+</dict>
+</plist>

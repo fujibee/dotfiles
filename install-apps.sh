@@ -28,6 +28,7 @@ brew install gh
 brew install xcodesorg/made/xcodes
 brew install nvm
 brew install yarn
+brew install autossh
 
 brew install --cask iterm2
 brew install --cask zerotier-one
