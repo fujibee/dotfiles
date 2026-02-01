@@ -124,9 +124,17 @@ esac
 # pnpm end
 eval "$(rbenv init - zsh)"
 
-alias login-liq="docker exec -it -u hostuser -w /repos liqag_agent zsh"
-alias login-thm="docker exec -it -u ubuntu -w /home/ubuntu thm_desktop zsh"
-alias login-aa="docker exec -it -u hostuser -w /repos airdrop_agent zsh"
+lliq() {
+  docker exec -it -u hostuser -w /repos liqag_agent zsh -c "tmux attach -t liq || zsh"
+}
+
+lmi() {
+  docker exec -it -u ubuntu -w /home/ubuntu thm_desktop zsh -c "tmux attach -t mi || zsh"
+}
+
+laa() {
+  docker exec -it -u hostuser -w /repos airdrop_agent zsh -c "tmux attach -t aa || zsh"
+}
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.lmstudio/bin"
