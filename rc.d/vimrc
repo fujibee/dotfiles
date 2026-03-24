@@ -120,3 +120,4 @@ let ruby_space_errors=1
 "  autocmd VimEnter * :Vexplore
 "augroup END
 map <C-n> :NERDTreeToggle<CR>
+source ~/.vimrc.ctags

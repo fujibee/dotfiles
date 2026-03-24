@@ -125,15 +125,23 @@ esac
 eval "$(rbenv init - zsh)"
 
 lliq() {
-  docker exec -it -u hostuser -w /repos liqag_agent zsh -c "tmux attach -t liq || zsh"
+  docker exec -it -u hostuser -w /repos liqag_agent zsh -c "tmux attach -t liq || tmux new -s liq"
 }
 
 lmi() {
-  docker exec -it -u ubuntu -w /home/ubuntu thm_desktop zsh -c "tmux attach -t mi || zsh"
+  docker exec -it -u ubuntu -w /home/ubuntu thm_agent zsh -c "tmux attach -t mi || tmux new -s mi"
 }
 
 laa() {
-  docker exec -it -u hostuser -w /repos airdrop_agent zsh -c "tmux attach -t aa || zsh"
+  docker exec -it -u hostuser -w /repos airdrop_agent zsh -c "tmux attach -t aa || tmux new -s aa"
+}
+
+lmolt() {
+  docker exec -it -u agent -w /home/agent/repo claude-code-agent zsh -c "tmux attach -t molt || tmux new -s molt"
+}
+
+oma() {
+  tmux attach -t oma || tmux new -s oma
 }
 
 # Added by LM Studio CLI (lms)
@@ -141,4 +149,23 @@ export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
 alias ai="$HOME/.dotfiles/tools/ai-cli.sh"
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Ctags alias for project
+alias retag='ctags -R --exclude=.git --exclude=node_modules --exclude=tmp --exclude=log --exclude=public --exclude=coverage --exclude=.bundle --exclude=vendor --exclude=dist --exclude=build --languages=Ruby,JavaScript,TypeScript app/ frontend/src/ lib/ config/'
+
+# Entire CLI shell completion
+autoload -Uz compinit && compinit && source <(entire completion zsh)
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/koichi/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

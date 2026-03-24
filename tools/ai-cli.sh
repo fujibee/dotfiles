@@ -1,67 +1,106 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# usage: ai <claude|codex|gemini> [continue|resume] [args...]
+# usage: ai <claude|codex|gemini> [-c|continue|-r|resume] [args...]
 ENGINE="${1:-}"
 shift || true
 
 if [[ -z "${ENGINE}" ]]; then
-  echo "Usage: ai <claude|codex|gemini> [continue|resume] [args...]"
+  echo "Usage: ai <claude|codex|gemini> [-c|continue|-r|resume] [--safe] [args...]"
   exit 2
 fi
 
-# Check for continue/resume subcommand
+# Resolve engine by prefix match
+resolve_engine() {
+  local input="$1"
+  local matches=()
+  for e in claude codex gemini; do
+    [[ "$e" == "$input"* ]] && matches+=("$e")
+  done
+  if [[ ${#matches[@]} -eq 1 ]]; then
+    echo "${matches[0]}"
+  elif [[ ${#matches[@]} -gt 1 ]]; then
+    echo "Ambiguous engine: $input (matches: ${matches[*]})" >&2
+    return 1
+  else
+    echo "Unknown engine: $input (expected: claude|codex|gemini)" >&2
+    return 1
+  fi
+}
+
+ENGINE="$(resolve_engine "$ENGINE")" || exit 2
+
+# Parse subcommands and flags
 SUBCMD=""
 TARGET=""
-if [[ "${1:-}" == "continue" ]] || [[ "${1:-}" == "resume" ]]; then
-  SUBCMD="$1"
-  shift || true
-  # For resume, capture optional target argument
-  if [[ "$SUBCMD" == "resume" ]] && [[ -n "${1:-}" ]] && [[ ! "$1" =~ ^- ]]; then
-    TARGET="$1"
-    shift || true
-  fi
-fi
+SAFE_MODE=false
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    continue|-c)
+      SUBCMD="continue"; shift ;;
+    resume|-r)
+      SUBCMD="resume"; shift
+      # Capture optional target argument
+      if [[ -n "${1:-}" ]] && [[ ! "$1" =~ ^- ]]; then
+        TARGET="$1"; shift
+      fi
+      ;;
+    --safe)
+      SAFE_MODE=true; shift ;;
+    *)
+      break ;;
+  esac
+done
 
 # Find repo root (prefer git), else current dir
 REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
-AGENT_PATH="$REPO_ROOT/AGENT.md"
 
-if [[ ! -f "$AGENT_PATH" ]]; then
-  echo "AGENT.md not found: $AGENT_PATH"
-  echo "Hint: put AGENT.md at repo root ($REPO_ROOT)"
-  exit 1
+# For continue/resume, skip AGENT.md loading — it's already in the session
+if [[ -z "$SUBCMD" ]]; then
+  AGENTS_PATH="$REPO_ROOT/AGENTS.md"
+
+  if [[ ! -f "$AGENTS_PATH" ]]; then
+    echo "AGENTS.md not found: $AGENTS_PATH"
+    echo "Hint: put AGENTS.md at repo root ($REPO_ROOT)"
+    exit 1
+  fi
+
+  AGENT_TEXT="$(cat "$AGENTS_PATH")"
+
+  # A robust injection prefix (works for codex/gemini as initial prompt)
+  INJECT_PROMPT=$(
+    cat <<'EOF'
+You must follow the repository instructions below (AGENTS.md). If there is any conflict with my request, ask a clarifying question before proceeding.
+
+--- BEGIN AGENTS.md ---
+EOF
+    printf "%s\n" "$AGENT_TEXT"
+    cat <<'EOF'
+--- END AGENTS.md ---
+EOF
+  )
 fi
-
-AGENT_TEXT="$(cat "$AGENT_PATH")"
-
-# A robust injection prefix (works for codex/gemini as initial prompt)
-INJECT_PROMPT=$(
-  cat <<'EOF'
-You must follow the repository instructions below (AGENT.md). If there is any conflict with my request, ask a clarifying question before proceeding.
-
---- BEGIN AGENT.md ---
-EOF
-  printf "%s\n" "$AGENT_TEXT"
-  cat <<'EOF'
---- END AGENT.md ---
-EOF
-)
 
 case "$ENGINE" in
   claude)
     cd "$REPO_ROOT"
-    # Claude Code supports system prompt append directly
+    # Default: --dangerously-skip-permissions; use --safe to disable
+    CLAUDE_ARGS=()
+    if [[ "$SAFE_MODE" == false ]]; then
+      CLAUDE_ARGS+=(--allow-dangerously-skip-permissions)
+    fi
+    # For continue/resume, skip system prompt — it's already in the session
     if [[ "$SUBCMD" == "continue" ]]; then
-      exec claude --continue --append-system-prompt "$AGENT_TEXT"
+      exec claude --continue "${CLAUDE_ARGS[@]}"
     elif [[ "$SUBCMD" == "resume" ]]; then
       if [[ -n "$TARGET" ]]; then
-        exec claude --resume "$TARGET" --append-system-prompt "$AGENT_TEXT"
+        exec claude --resume "$TARGET" "${CLAUDE_ARGS[@]}"
       else
-        exec claude --resume --append-system-prompt "$AGENT_TEXT"
+        exec claude --resume "${CLAUDE_ARGS[@]}"
       fi
     else
-      exec claude --append-system-prompt "$AGENT_TEXT" "$@"
+      exec claude --append-system-prompt "$AGENT_TEXT" "${CLAUDE_ARGS[@]}" "$@"
     fi
     ;;
 
@@ -110,7 +149,8 @@ case "$ENGINE" in
     ;;
 
   *)
-    echo "Unknown engine: $ENGINE (expected: claude|codex|gemini)"
+    # Should not reach here due to resolve_engine above
+    echo "Unknown engine: $ENGINE" >&2
     exit 2
     ;;
 esac
